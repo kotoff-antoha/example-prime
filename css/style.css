@@ -145,9 +145,7 @@ body {
     color: #000; }
   .btn.fw {
     width: 100%; }
- @media (max-width: 479.98px) {
-    .btn {
-      padding: 0px 18px; } }
+
 
 .select-block {
   position: relative; }
@@ -216,6 +214,10 @@ body {
       margin: 0px 0px 0px 0px; }
     .select .select-options__value:hover {
       color: #000; }
+
+ @media (max-width: 479.98px) {
+    .btn {
+      padding: 0px 18px; } }
 
 input[type=text], input[type=email], input[type=tel], textarea {
   -webkit-appearance: none;
