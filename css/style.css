@@ -145,6 +145,9 @@ body {
     color: #000; }
   .btn.fw {
     width: 100%; }
+ @media (max-width: 479.98px) {
+    .btn {
+      padding: 0px 18px; } }
 
 .select-block {
   position: relative; }
