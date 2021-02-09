@@ -136,6 +136,10 @@ body {
   color: #fff;
   display: inline-block;
   padding: 0px 33px;
+	
+	 @media (max-width: 479.98px) {
+      padding: 0px 18px; }
+	
   font-size: 15px;
   font-family: 'Bebas';
   text-transform: uppercase;
@@ -215,9 +219,7 @@ body {
     .select .select-options__value:hover {
       color: #000; }
 
- @media (max-width: 479.98px) {
-    .btn {
-      padding: 0px 18px; } }
+
 
 input[type=text], input[type=email], input[type=tel], textarea {
   -webkit-appearance: none;
