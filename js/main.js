@@ -1039,7 +1039,9 @@ function map(n){
 		//pixelOffset: new google.maps.Size(-230,250)
 	});
 	var locations = [
-		[new google.maps.LatLng(47.910127, 33.392569)],
+// 		[new google.maps.LatLng(47.910127, 33.392569)],
+		[new google.maps.LatLng(40.7233595,-73.9825102)],
+		
 
 		// [new google.maps.LatLng(53.819055,27.8813694)],
 		// [new google.maps.LatLng(53.700055,27.5513694)],
