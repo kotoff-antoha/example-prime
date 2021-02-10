@@ -1,9 +1,3 @@
-//@prepros-append jq-start.js
-//@prepros-append forms.js
-//@prepros-append script.js
-//@prepros-append map.js
-//@prepros-append jq-end.js
-//@prepros-append responsive.js
 $(document).ready(function() {
 		var w=$(window).outerWidth();
 		var h=$(window).outerHeight();
@@ -143,9 +137,6 @@ function forms(){
 				$(this).find('.select-options').slideToggle(50,function() {
 					$(this).find(".select-options-scroll").getNiceScroll().resize();
 				});
-
-				//	var input=$(this).parent().find('select');
-				//removeError(input);
 
 				if($(this).attr('data-type')=='search'){
 					if(!$(this).hasClass('active')){
@@ -302,8 +293,6 @@ function forms(){
 		}
 		$(this).toggleClass('active');
 	});
-
-	//$('textarea').autogrow({vertical: true, horizontal: false});
 	
 
 	//MASKS//
@@ -339,50 +328,7 @@ function forms(){
 	$('input.num').focusout(function(event) {
 		maskclear($(this));
 	});
-	/*
-	$.each($('input.date'), function(index, val) {
-		$(this).focus(function(){
-			$(this).inputmask('dd.mm.yyyy',{
-				clearIncomplete: true,
-				placeholder:"_",
-				//yearrange:{'minyear':n-40,'maxyear':n},
-				clearMaskOnLostFocus: true,
-				"onincomplete": function(){maskclear($(this));},
-				"oncomplete": function(){
-					$(this).datepicker("setDate",$(this).val());
-				}
-			});
-			$(this).addClass('focus');
-			$(this).parents('.form-column').addClass('focus');
-			$(this).parent().addClass('focus');
-			$(this).parent().removeClass('err');
-			$(this).removeClass('err');
-		});
-		$(this).focusout(function(event) {
-			maskclear($(this));
-		});
-		$(this).datepicker({
-			dateFormat : "dd.mm.yy",
-			//yearRange: "1915:2015",
-			//defaultDate: '-18Y', 
-			//inDate: '-85Y', 
-			//maxDate: "0Y",
-			beforeShow :function(event){
-				$('.ui-datepicker').show();
-			},
-			onSelect:function(event){
-				if($(this).val()!=$(this).attr('data-value') && $(this).val()!=''){
-					$(this).addClass('focus');
-					$(this).parent().addClass('focus');
-					if($(this).hasClass('l') && $(this).parent().find('.form__label').length==0){
-						$(this).parent().append('<div class="form__label">'+$(this).attr('data-value')+'</div>');
-					}
-				}
-			}
-		});
-	});
-	*/
-
+	
 	//CHECK
 	$.each($('.check'), function(index, val) {
 		if($(this).find('input').prop('checked')==true){
@@ -540,42 +486,7 @@ $('form button[type=submit]').click(function(){
 	});
 	if(er==0){
 		removeFormError(form);
-		/*
-			var messagehtml='';
-		if(form.hasClass('editprofile')){
-			var messagehtml='';
-		}
-		formLoad();
-		*/
-
-		//ОПТРАВКА ФОРМЫ
-		/*
-		function showResponse(html){
-			if(!form.hasClass('nomessage')){
-				showMessage(messagehtml);
-			}
-			if(!form.hasClass('noclear')){
-				clearForm(form);
-			}
-		}
-		var options={
-			success:showResponse
-		};
-			form.ajaxForm(options);
-		
-
-		setTimeout(function(){
-			if(!form.hasClass('nomessage')){
-				//showMessage(messagehtml);
-				showMessageByClass(ms);
-			}
-			if(!form.hasClass('noclear')){
-				clearForm(form);
-			}
-		},0);
-
-		return false;
-		*/
+	
 		if(ms!=null && ms!=''){
 			showMessageByClass(ms);
 			return false;
@@ -765,12 +676,6 @@ if ($('.gallery').length > 0) {
 		// Custom options
 	});
 }
-/*
-CLOUD-ZOOM
-<a rel="position:'right',adjustX:25,adjustY:0,Width: 432" href="img/product/zoom.jpg" class="cloud-zoom product-main-mainimage__item">
-	<img class="cloudzoom-gallery" src="img/product/zoom.jpg" alt="" />
-</a>
-*/
 
 
 //POPUP
@@ -964,42 +869,6 @@ if (navigator.appVersion.indexOf("Mac") != -1) {
 	if ($('.scroll-body').length > 0) { scroll(); }
 }
 
-/*
-function scrollwhouse(){
-		var scs=100;
-		var mss=50;
-		var bns=false;
-	if(isMobile.any()){
-		scs=10;
-		mss=1;
-		bns=true;
-	}
-	var opt={
-		cursorcolor:"#afafaf",
-		cursorwidth: "5px",
-		background: "",
-		autohidemode:false,
-		railalign: 'left',
-		cursoropacitymax: 1,
-		bouncescroll:bns,
-		cursorborderradius: "0px",
-		scrollspeed:scs,
-		mousescrollstep:mss,
-		directionlockdeadzone:0,
-		cursorborder: "0px solid #fff",
-	};
-	return opt;
-}
-$('.whouse-content-body').niceScroll('.whouse-content-scroll',scrollwhouse());
-$('.whouse-content-body').scroll(function(event) {
-		var s=$(this).scrollTop();
-		var r=Math.abs($(this).outerHeight()-$('.whouse-content-scroll').outerHeight());
-		var p=s/r*100;
-	$('.whouse-content__shadow').css({opacity:1-1/100*p});
-});
-*/
-
-
 if ($('.t,.tip').length > 0) {
 	tip();
 }
@@ -1039,15 +908,7 @@ function map(n){
 		//pixelOffset: new google.maps.Size(-230,250)
 	});
 	var locations = [
-// 		[new google.maps.LatLng(47.910127, 33.392569)],
 		[new google.maps.LatLng(40.711063, -74.006512)],
-		
-
-		// [new google.maps.LatLng(53.819055,27.8813694)],
-		// [new google.maps.LatLng(53.700055,27.5513694)],
-		// [new google.maps.LatLng(53.809055,27.5813694)],
-		// [new google.maps.LatLng(53.859055,27.5013694)],
-
 	]
 	var options = {
 		zoom: 14,
@@ -1105,48 +966,6 @@ if($("#map").length>0){
 	map(1);
 }
 
-
-/* YA
-function map(n){
-	ymaps.ready(init);
-	function init(){ 
-		// Создание карты.
-		var myMap = new ymaps.Map("map", {
-			// Координаты центра карты.
-			// Порядок по умолчанию: «широта, долгота».
-			// Чтобы не определять координаты центра карты вручную,
-			// воспользуйтесь инструментом Определение координат.
-			controls: [],
-			center: [43.585525,39.723062],
-			// Уровень масштабирования. Допустимые значения:
-			// от 0 (весь мир) до 19.
-			zoom: 10
-		});
-		
-		myPlacemar = new ymaps.Placemark([43.585525,39.723062],{
-			id:'2'
-		},{
-			// Опции.
-			hasBalloon:false,
-			hideIconOnBalloonOpen:false,
-			// Необходимо указать данный тип макета.
-			iconLayout: 'default#imageWithContent',
-			// Своё изображение иконки метки.
-			iconImageHref: 'img/icons/map.svg',
-			// Размеры метки.
-			iconImageSize: [40, 40],
-			// Смещение левого верхнего угла иконки относительно
-			// её "ножки" (точки привязки).
-			iconImageOffset: [-20, -20],
-			// Смещение слоя с содержимым относительно слоя с картинкой.
-			iconContentOffset: [0,0],
-		});
-		myMap.geoObjects.add(myPlacemar);
-
-		myMap.behaviors.disable('scrollZoom');
-	}
-}
-*/
 });
 //Adaptive functions
 
@@ -1167,24 +986,6 @@ function adaptive_header(w){
 			headerLang.removeClass('done').prependTo($('.header-top'));
 		}
 	}
-
-	// if(w<768){
-	// 	if(!$('.header-bottom-menu').hasClass('done')){
-	// 		$('.header-bottom-menu').addClass('done').appendTo(headerMenu);
-	// 	}
-	// } else {
-	// 	$.each($('.header-bottom-menu'), function(index, val){
-	// 		if ($(this).hasClass('.header-bottom-menu--right')){
-	// 			if ($(this).hasClass('done')){
-	// 				$(this).removeClass('done').prependTo($('.header-bottom__column').eq(2));
-	// 			}
-	// 		} else {
-	// 			if ($(this).hasClass('done')){
-	// 				$(this).removeClass('done').prependTo($('.header-bottom__column').eq(0));
-	// 			}
-	// 		}
-	// 	});
-	// }
 
 	if(w<768){
 		if(!$('.header-bottom-menu').hasClass('done')){
@@ -1209,76 +1010,3 @@ function adaptive_function(){
 
 adaptive_function();
 
-/*
-	let move_array=[];
-if($('*[data-move]')){
-	$.each($('*[data-move]'), function(index, val) {
-		if($(this).data('move')!='' && $(this).data('move')!=null){
-			$(this).attr('data-move-index',index);
-			move_array[index]={
-				'parent':$(this).parent(),
-				"index":$(this).index()
-			};
-		}
-	});
-}
-function dynamic_adaptive(){
-		let w=$(window).outerWidth();
-	$.each($('*[data-move]'), function(index, val) {
-		if($(this).data('move')!='' && $(this).data('move')!=null){
-				let dat_array=$(this).data('move').split(',');
-				let dat_parent=$('.'+dat_array[0]);
-				let dat_index=dat_array[1];
-				let dat_bp=dat_array[2];
-			if(w<dat_bp){
-				if(!$(this).hasClass('js-move_done_'+dat_bp)){
-					if(dat_index>0){
-						$(this).insertAfter(dat_parent.find('*').eq(dat_index-1));
-					}else{
-						$(this).prependTo(dat_parent);
-					}
-					$(this).addClass('js-move_done_'+dat_bp);
-				}
-			}else{
-				if($(this).hasClass('js-move_done_'+dat_bp)){
-					dynamic_adaptive_back($(this));
-					$(this).removeClass('js-move_done_'+dat_bp);
-				}
-			}
-		}
-	});
-}
-function dynamic_adaptive_back(el){
-		let index_original=el.data('move-index');
-		let move_place=move_array[index_original];
-		let parent_place=move_place['parent'];
-		let index_place=move_place['index'];
-	if(index_place>0){
-		el.insertAfter(parent_place.find('*').eq(index_place-1));
-	}else{
-		el.prependTo(parent_place);
-	}
-}
-$(window).resize(function(event) {
-	dynamic_adaptive();
-});
-	dynamic_adaptive();
-
-//console.log(move_array);
-*/
-
-/*
-function dynamic_adaptive_back_all(){
-	$.each($('*[data-move]'), function(index, val) {
-			let index_original=$(this).data('move-index');
-			let move_place=move_array[index_original];
-			let parent_place=move_place['parent'];
-			let index_place=move_place['index'];
-		if(index_place>0){
-			$(this).insertAfter(parent_place.find('*').eq(index_place-1));
-		}else{
-			$(this).prependTo(parent_place);
-		}
-	});
-}
-*/
