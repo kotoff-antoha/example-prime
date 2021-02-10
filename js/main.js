@@ -296,11 +296,6 @@ function forms(){
 	
 
 	//MASKS//
-	//'+7(999) 999 9999'
-	//'+38(999) 999 9999'
-	//'+375(99)999-99-99'
-	//'a{3,1000}' только буквы минимум 3
-	//'9{3,1000}' только цифры минимум 3
 	$.each($('input.phone'), function(index, val) {
 		$(this).attr('type','tel');
 		$(this).focus(function(){
