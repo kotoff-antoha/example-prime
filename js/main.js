@@ -1040,7 +1040,7 @@ function map(n){
 	});
 	var locations = [
 // 		[new google.maps.LatLng(47.910127, 33.392569)],
-		[new google.maps.LatLng(40.7233595,-73.9825102)],
+		[new google.maps.LatLng(40.711063, -74.006512)],
 		
 
 		// [new google.maps.LatLng(53.819055,27.8813694)],
@@ -1060,7 +1060,8 @@ function map(n){
 	}; 
 	var map = new google.maps.Map(document.getElementById('map'), options);
 	var icon={
-		url:'img/icons/map.svg',
+		//url:'img/icons/map.svg',
+		url:'img/icons/map.png',
 		scaledSize: new google.maps.Size(18, 20),
 		anchor: new google.maps.Point(9, 10)
 	}
