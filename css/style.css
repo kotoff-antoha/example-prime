@@ -361,6 +361,8 @@ body.ie .ibg img {
   -moz-filter: grayscale(0);
   -o-filter: grayscale(0);
 }
+.gm-style-iw-t {
+  opacity: 0; }
 
 .baloon {
   opacity: 1;
